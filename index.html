@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Business Software & App Development | ReadyMadeApp</title>
+    <meta name="description" content="Get custom business software and apps built around your needs. We develop tailored applications, internal business tools, dashboards, portals, and workflow automation solutions for companies of all sizes.">
+    <meta name="keywords" content="custom business software development, custom business app development, customized software solutions for businesses, custom web application development, replace spreadsheets with custom software, develop an app for my business, custom software for small businesses, business process automation solutions">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0c">
+    <link rel="canonical" href="https://readymadeapp.com/">
+    <!-- Open Graph / Social SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ReadyMadeApp">
+    <meta property="og:title" content="Custom Business Software & App Development | ReadyMadeApp">
+    <meta property="og:description" content="Get 100% unique business software and private mobile backend apps tailored around your exact workflow, calendar sync, and pricing.">
+    <meta property="og:url" content="https://readymadeapp.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Custom Business Software & App Development | ReadyMadeApp">
+    <meta name="twitter:description" content="No one app for everyone. A 100% unique app built around your business with phone calendar sync, custom appointment alerts, and short turnaround times.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brandRed: '#ff5733',
+                        brandYellow: '#fbbf24',
+                        brandBlue: '#0052ff',
+                        darkBg: '#0a0a0c',
+                        darkCard: '#121216',
+                        darkBorder: '#27272a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0c;
+            overflow-x: hidden;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <!-- Structured Data (Schema.org) for Custom Business Software & App Development -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ReadyMadeApp",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web, iOS, Android",
+          "description": "Custom business software and app development tailored exclusively to each client's specific business needs. Simple personal business apps starting at $199 one-time lifetime price — the app is yours to own on your device — and custom quotes for complex operational software.",
+          "offers": {
+            "@type": "Offer",
+            "price": "199.00",
+            "priceCurrency": "USD"
+          },
+          "provider": {
+            "@type": "Organization",
+            "name": "ReadyMadeApp",
+            "url": "https://readymadeapp.com"
+          }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Custom Business Software & App Development",
+          "provider": {
+            "@type": "Organization",
+            "name": "ReadyMadeApp",
+            "url": "https://readymadeapp.com"
+          },
+          "areaServed": "North America",
+          "description": "Tailored mobile backend apps for small businesses and custom operational web applications for larger companies, including phone calendar sync and custom-timed appointment alerts."
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-darkBg text-stone-100 antialiased selection:bg-brandRed selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- Custom Toast Notification (Replaces alert()) -->
+    <div id="toast-notification" role="status" aria-live="polite" class="fixed bottom-4 left-4 right-4 sm:right-auto sm:left-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-darkCard text-white border border-darkBorder px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-sm font-medium max-w-sm">
+            <i class="fa-solid fa-circle-check text-brandYellow text-base shrink-0"></i>
+            <span id="toast-message">Action completed!</span>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         TOP NAVIGATION (Mobile-First Sticky Header)
+         ===================================================================== -->
+    <header class="sticky top-0 z-40 bg-darkBg/95 backdrop-blur-xl border-b border-darkBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4 flex items-center justify-between gap-2">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-brandRed text-white flex items-center justify-center font-extrabold text-sm sm:text-base shadow-lg shadow-brandRed/25 group-hover:scale-105 transition">
+                    RM
+                </div>
+                <span class="font-extrabold text-lg sm:text-2xl tracking-tight text-white">
+                    ReadyMade<span class="text-brandRed">App</span>
+                </span>
+            </a>
+
+            <!-- Center Links -->
+            <nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-8 text-sm font-semibold text-stone-400">
+                <a href="#why-custom" class="hover:text-white transition">Custom Backends</a>
+                <a href="#examples" class="hover:text-white transition">Small & Large Teams</a>
+                <a href="#preview" class="hover:text-white transition">Live Simulator</a>
+                <a href="#pricing" class="hover:text-white transition">Pricing</a>
+            </nav>
+
+            <!-- Right CTA Pill -->
+            <a href="#contact" class="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-brandRed hover:bg-[#e04825] text-white font-bold text-xs sm:text-sm transition shadow-lg shadow-brandRed/25 flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <span>Build Your App</span>
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
+        <!-- Mobile Quick-Jump Sub-Nav -->
+        <nav aria-label="Mobile Navigation" class="flex md:hidden items-center justify-around border-t border-darkBorder/70 px-2 py-2 text-xs font-semibold text-stone-400 bg-darkBg/95">
+            <a href="#why-custom" class="py-1 px-2 hover:text-white transition">Custom</a>
+            <a href="#examples" class="py-1 px-2 hover:text-white transition">Industries</a>
+            <a href="#preview" class="py-1 px-2 hover:text-white transition">Simulator</a>
+            <a href="#pricing" class="py-1 px-2 hover:text-white transition">Pricing</a>
+        </nav>
+    </header>
+
+    <main class="flex-1">
+    <!-- =====================================================================
+         HERO SECTION (Mobile-First Typography & Spacing)
+         ===================================================================== -->
+    <section class="relative pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24 overflow-hidden">
+        <!-- Ambient Brand Glows -->
+        <div class="absolute top-10 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-brandRed/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+        <div class="absolute top-40 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-brandBlue/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Punchy SEO-Focused H1 -->
+            <h1 class="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.12] mb-5 sm:mb-6">
+                No one app for everyone. A <span class="bg-brandRed text-white px-3 sm:px-4 py-0.5 rounded-2xl inline-block shadow-lg shadow-brandRed/20 mt-1 sm:mt-0">100% unique app</span> built around you.
+            </h1>
+
+            <!-- Supporting SEO Keywords & Little-Guy + Big-Company Subheadline -->
+            <p class="text-base sm:text-xl text-stone-300 max-w-3xl mx-auto mb-7 sm:mb-8 font-sans leading-relaxed">
+                We don't force your business into a generic template. Every build is tailored exclusively to your specific workflow, pricing, and daily rules. From simple personal backend apps for solo operators to full operational software for larger companies, you get a completely custom system with short turnaround times.
+            </p>
+
+            <!-- Prominent Phone Calendar Sync & Custom Alert Callout -->
+            <div class="max-w-4xl mx-auto mb-10 bg-darkCard border border-darkBorder rounded-3xl p-5 sm:p-6 text-left flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-xl">
+                <div class="w-12 h-12 rounded-2xl bg-brandBlue/15 text-brandBlue flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="space-y-1">
+                    <h2 class="text-base sm:text-lg font-extrabold text-white">
+                        Direct Phone Calendar Sync & Custom-Timed Alerts
+                    </h2>
+                    <p class="text-sm text-stone-300 font-sans leading-relaxed">
+                        Never miss an appointment again. Along with in-app appointment notifications set to alert you at whatever exact timeframe beforehand you choose (15 minutes, 2 hours, or the night before), our apps connect straight to your Apple or Google phone calendar automatically.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <a href="#contact" class="px-8 py-4 rounded-full bg-brandRed hover:bg-[#e04825] text-white font-extrabold text-base shadow-xl shadow-brandRed/25 transition">
+                    Get Your Custom Quote & Brief
+                </a>
+                <a href="#preview" class="px-8 py-4 rounded-full bg-darkCard hover:bg-stone-900 text-white border border-darkBorder font-bold text-base transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-mobile-screen-button text-brandYellow"></i> Test Live Appointment Simulator
+                </a>
+            </div>
+
+            <!-- 3-CARD BENTO GRID (Unique Tailoring + Little Guy Focus + Larger Company Scale) -->
+            <div id="why-custom" class="grid md:grid-cols-3 gap-5 text-left">
+                <!-- Card 1: Built for the Little Guy -->
+                <div class="bg-darkCard rounded-3xl p-7 border border-darkBorder hover:border-brandRed/50 transition shadow-xl">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brandRed mb-2">For Solo Pros & Small Shops</p>
+                    <h2 class="text-xl font-bold text-white mb-2">A Private Pocket Backend for the Little Guy</h2>
+                    <p class="text-stone-400 text-sm font-sans leading-relaxed">
+                        Starting at a $199 one-time lifetime price, the app is yours to own directly on your device. Solo operators and small teams get a private mobile backend tailored to their exact services to log appointments, sync to their phone calendar with custom alerts, track mileage, and send 1-tap SMS receipts.
+                    </p>
+                </div>
+
+                <!-- Card 2: No One App For Everyone -->
+                <div class="bg-gradient-to-br from-[#171926] to-darkCard rounded-3xl p-7 border-2 border-brandBlue/60 shadow-2xl shadow-brandBlue/10">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brandBlue mb-2">100% Tailored To You</p>
+                    <h2 class="text-xl font-bold text-white mb-2">No Cookie-Cutter Templates. Completely Yours.</h2>
+                    <p class="text-stone-300 text-sm font-sans leading-relaxed">
+                        There is no single app that fits every business. We engineer every button, formula, tax rule, notification window, and screen specifically around your business needs so you can replace messy spreadsheets for good.
+                    </p>
+                </div>
+
+                <!-- Card 3: Scales for Larger Businesses -->
+                <div class="bg-darkCard rounded-3xl p-7 border border-darkBorder hover:border-brandYellow/50 transition shadow-xl">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brandYellow mb-2">For Growing & Larger Companies</p>
+                    <h2 class="text-xl font-bold text-white mb-2">Complex Software Built Around Your Operations</h2>
+                    <p class="text-stone-400 text-sm font-sans leading-relaxed">
+                        Need multi-crew scheduling, custom inventory rules, executive dashboards, or client portals? We provide tailored quotes for complex business software built with short turnaround times.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         INDUSTRY-SPECIFIC KEYWORD & SOLUTION SHOWCASE
+         ===================================================================== -->
+    <section id="examples" class="py-20 bg-darkCard border-t border-darkBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <p class="text-xs font-bold text-brandYellow uppercase tracking-widest">
+                    Custom Software For Small Businesses & Enterprises
+                </p>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Customized software solutions <span class="text-brandRed">for every industry</span>
+                </h2>
+                <p class="text-stone-400 text-base font-sans">
+                    We build custom business applications to manage operations across any sector. Explore how companies use ReadyMadeApp to streamline daily work:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Example 1: Construction Businesses -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandRed/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandRed/15 text-brandRed flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-darkCard border border-darkBorder text-stone-400">Construction Businesses</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Construction Management & Contractor Scheduling App</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Walk a job site, enter square footage and material costs, apply your exact markup rules, and text a clean itemized estimate on the spot, complete with contractor scheduling and project tracking.
+                    </p>
+                    <div class="pt-3 border-t border-darkBorder/60 text-xs font-semibold text-stone-400">
+                        Construction Project Tracking • Contractor Scheduling • On-Site Quoting
+                    </div>
+                </div>
+
+                <!-- Example 2: Retail and E-Commerce -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandYellow/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandYellow/15 text-brandYellow flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brandYellow">Retail & E-Commerce</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Retail Management & Inventory Tracking App</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Replace manual stock sheets with custom inventory management and order management software. Trigger low-stock reorder alerts and give wholesale buyers a self-serve B2B order portal.
+                    </p>
+                    <div class="pt-3 border-t border-darkBorder/60 text-xs font-semibold text-stone-400">
+                        Inventory Tracking App • Custom Order Management • B2B Tier Pricing
+                    </div>
+                </div>
+
+                <!-- Example 3: Professional Services -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandBlue/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/15 text-brandBlue flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brandBlue">Professional Services</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Client Management & Client Portal Development</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Built for agencies, clinics, consultants, and studios. Get a custom CRM application with branded client portals for 1-click approvals, retainer tracking, intake forms, and automated billing.
+                    </p>
+                    <div class="pt-3 border-t border-darkBorder/60 text-xs font-semibold text-stone-400">
+                        Custom CRM Application • Client Portal Development • Retainer Tracking
+                    </div>
+                </div>
+
+                <!-- Example 4: Restaurants & Hospitality -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandBlue/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/15 text-brandBlue flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brandBlue">Restaurants & Hospitality</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Restaurant Management, Booking & Employee Scheduling</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Streamline front-of-house and kitchen workflows with a custom restaurant booking system, catering order tracker, prep-list calculator, and shift-based employee scheduling app.
+                    </p>
+                    <div class="pt-3 border-t border-darkBorder/60 text-xs font-semibold text-stone-400">
+                        Custom Booking System • Employee Scheduling App • Catering & Prep Logs
+                    </div>
+                </div>
+
+                <!-- Example 5: Trades & Field Service Businesses -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandRed/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandRed/15 text-brandRed flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brandRed">Trades & Field Service</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Field Service Management & Job Tracking Software</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Ideal for HVAC, plumbers, cleaners, and mobile pros. Log phone or text bookings in 5 seconds, calculate travel zones, track mileage, and send instant 1-tap SMS invoices.
+                    </p>
+                    <div class="pt-3 border-t border-darkBorder/60 text-xs font-semibold text-stone-400">
+                        Field Service Management • Job Tracking Software • 1-Tap SMS Invoices
+                    </div>
+                </div>
+
+                <!-- Example 6: Custom Internal Business Tools & Dashboards -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandYellow/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandYellow/15 text-brandYellow flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brandYellow">Internal Tools & Data</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Business Dashboard & Database Applications</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Unify your daily KPIs, net profit, sales taxes held, and staff activity into a secure custom database application with real-time executive dashboards accessible from any device.
+                    </p>
+                    <div class="pt-3 border-t border-darkBorder/60 text-xs font-semibold text-stone-400">
+                        Custom Business Dashboards • Database Applications • Automated Tax Math
+                    </div>
+                </div>
+
+                <!-- Example 2: Retail and E-Commerce -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandYellow/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandYellow/15 text-brandYellow flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-darkCard border border-darkBorder text-stone-400">Retail & E-Commerce</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Retail Management & Inventory Tracking App</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Replace manual stock sheets with custom inventory management and order management software. Trigger low-stock reorder alerts and give wholesale buyers a self-serve B2B order portal.
+                    </p>
+                    <div class="pt-2 border-t border-darkBorder/60 flex flex-wrap gap-1.5 text-[10px] font-semibold text-stone-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Inventory Tracking App</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Custom Order Management</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">B2B Tier Pricing</span>
+                    </div>
+                </div>
+
+                <!-- Example 3: Professional Services -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandBlue/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/15 text-brandBlue flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-darkCard border border-darkBorder text-stone-400">Professional Services</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Client Management & Client Portal Development</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Built for agencies, clinics, consultants, and studios. Get a custom CRM application with branded client portals for 1-click approvals, retainer tracking, intake forms, and automated billing.
+                    </p>
+                    <div class="pt-2 border-t border-darkBorder/60 flex flex-wrap gap-1.5 text-[10px] font-semibold text-stone-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Custom CRM Application</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Client Portal Development</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Retainer Tracking</span>
+                    </div>
+                </div>
+
+                <!-- Example 4: Restaurants & Hospitality -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandBlue/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/15 text-brandBlue flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-darkCard border border-darkBorder text-stone-400">Restaurants & Hospitality</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Restaurant Management, Booking & Employee Scheduling</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Streamline front-of-house and kitchen workflows with a custom restaurant booking system, catering order tracker, prep-list calculator, and shift-based employee scheduling app.
+                    </p>
+                    <div class="pt-2 border-t border-darkBorder/60 flex flex-wrap gap-1.5 text-[10px] font-semibold text-stone-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Custom Booking System</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Employee Scheduling App</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Catering & Prep Logs</span>
+                    </div>
+                </div>
+
+                <!-- Example 5: Trades & Field Service Businesses -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandRed/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandRed/15 text-brandRed flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-darkCard border border-darkBorder text-stone-400">Trades & Field Service</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Field Service Management & Job Tracking Software</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Ideal for HVAC, plumbers, cleaners, and mobile pros. Log phone or text bookings in 5 seconds, calculate travel zones, track mileage, and send instant 1-tap SMS invoices.
+                    </p>
+                    <div class="pt-2 border-t border-darkBorder/60 flex flex-wrap gap-1.5 text-[10px] font-semibold text-stone-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Field Service Management</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Job Tracking Software</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">1-Tap SMS Invoices</span>
+                    </div>
+                </div>
+
+                <!-- Example 6: Custom Internal Business Tools & Dashboards -->
+                <div class="bg-darkBg border border-darkBorder p-7 rounded-3xl space-y-4 hover:border-brandYellow/60 transition shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-brandYellow/15 text-brandYellow flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-darkCard border border-darkBorder text-stone-400">Internal Tools & Data</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Custom Business Dashboard & Database Applications</h3>
+                    <p class="text-sm text-stone-400 font-sans leading-relaxed flex-1">
+                        Unify your daily KPIs, net profit, sales taxes held, and staff activity into a secure custom database application with real-time executive dashboards accessible from any device.
+                    </p>
+                    <div class="pt-2 border-t border-darkBorder/60 flex flex-wrap gap-1.5 text-[10px] font-semibold text-stone-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Custom Business Dashboards</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Database Applications</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-darkCard">Automated Tax Math</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         INTERACTIVE MULTI-INDUSTRY LIVE APP SIMULATOR (With Live Appointment Booking)
+         ===================================================================== -->
+    <section id="preview" class="py-20 bg-darkBg border-t border-darkBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Explanation & Interactive Simulator Controls -->
+                <div class="lg:col-span-7 space-y-6">
+                    <p class="text-xs font-bold text-brandBlue uppercase tracking-widest">
+                        Interactive Backend Simulator
+                    </p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Test adding new client appointments and orders in real time.
+                    </h2>
+                    <p class="text-stone-300 text-base font-sans leading-relaxed">
+                        Whether you are a solo operator logging a text booking in 5 seconds or a larger team dispatching crews, test how ReadyMadeApp calculates totals, holds taxes, and updates your schedule live.
+                    </p>
+
+                    <!-- Industry Preset Switcher Pills -->
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <button onclick="switchSimPreset('service')" id="preset-btn-service" class="px-4 py-2 rounded-full bg-brandRed text-white text-xs font-bold transition shadow-md">
+                            Small Service Pro (Solo)
+                        </button>
+                        <button onclick="switchSimPreset('contractor')" id="preset-btn-contractor" class="px-4 py-2 rounded-full bg-darkCard border border-darkBorder text-stone-300 hover:text-white text-xs font-bold transition">
+                            Contractor & Field Crew
+                        </button>
+                        <button onclick="switchSimPreset('retail')" id="preset-btn-retail" class="px-4 py-2 rounded-full bg-darkCard border border-darkBorder text-stone-300 hover:text-white text-xs font-bold transition">
+                            Larger Retail & Operations
+                        </button>
+                    </div>
+
+                    <!-- Quick Add Custom Appointment / Entry Panel -->
+                    <div class="bg-darkCard border border-darkBorder rounded-3xl p-4 sm:p-5 space-y-4">
+                        <div class="flex items-center justify-between gap-2">
+                            <p class="text-xs font-bold uppercase tracking-wider text-brandYellow">
+                                <i class="fa-solid fa-calendar-plus mr-1.5"></i> Add a New Client Appointment
+                            </p>
+                            <button type="button" onclick="simResetPreview()" class="text-xs text-stone-400 hover:text-white underline shrink-0">Reset Demo</button>
+                        </div>
+
+                        <form onsubmit="simSubmitCustomAppointment(event)" class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 font-sans">
+                            <input type="text" id="sim-input-client" aria-label="Client Name" placeholder="Client Name (e.g. Sarah K.)" required class="sm:col-span-4 bg-darkBg border border-darkBorder rounded-xl px-3.5 py-3 sm:py-2.5 text-sm sm:text-xs text-white focus:outline-none focus:border-brandRed placeholder-stone-500">
+                            <input type="text" id="sim-input-service" aria-label="Service or Job" placeholder="Service / Job (e.g. Full Cut & Style)" required class="sm:col-span-4 bg-darkBg border border-darkBorder rounded-xl px-3.5 py-3 sm:py-2.5 text-sm sm:text-xs text-white focus:outline-none focus:border-brandRed placeholder-stone-500">
+                            <div class="grid grid-cols-2 sm:col-span-4 gap-2.5">
+                                <input type="text" id="sim-input-time" aria-label="Appointment Time" placeholder="Tomorrow 10:30 AM" required class="bg-darkBg border border-darkBorder rounded-xl px-3.5 py-3 sm:py-2.5 text-sm sm:text-xs text-white focus:outline-none focus:border-brandRed placeholder-stone-500">
+                                <input type="number" id="sim-input-price" aria-label="Price" placeholder="$ Price" min="1" step="0.01" required class="bg-darkBg border border-darkBorder rounded-xl px-3.5 py-3 sm:py-2.5 text-sm sm:text-xs text-white focus:outline-none focus:border-brandRed placeholder-stone-500">
+                            </div>
+                            <div class="sm:col-span-12 flex flex-col sm:flex-row flex-wrap gap-2.5 pt-1">
+                                <button type="submit" class="w-full sm:w-auto px-5 py-3 sm:py-2.5 rounded-full bg-brandRed hover:bg-[#e04825] text-white text-xs font-bold transition shadow-md shadow-brandRed/20">
+                                    + Log New Client Appointment
+                                </button>
+                                <button type="button" onclick="simAddRandomAppointment()" class="w-full sm:w-auto px-4 py-3 sm:py-2.5 rounded-full bg-darkBg hover:bg-stone-800 text-stone-200 border border-darkBorder text-xs font-bold transition">
+                                    ⚡ Quick-Fill Sample Appointment
+                                </button>
+                                <button type="button" onclick="simCopySmsReceipt()" class="w-full sm:w-auto px-4 py-3 sm:py-2.5 rounded-full bg-brandBlue hover:bg-[#0040cc] text-white text-xs font-bold transition shadow-md shadow-brandBlue/20">
+                                    <i class="fa-solid fa-comment-sms mr-1"></i> Copy 1-Tap SMS Confirmation
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <ul class="space-y-3 pt-1 font-sans">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brandRed/20 flex items-center justify-center text-brandRed mt-0.5 shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-sm text-stone-200"><strong>Phone Calendar Sync & Custom Reminders:</strong> Every appointment you log connects to your phone's built-in calendar and triggers custom notifications at the exact lead time you choose, so an appointment is never missed.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brandYellow/20 flex items-center justify-center text-brandYellow mt-0.5 shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-sm text-stone-200"><strong>Automatic Tax & Profit Math:</strong> Every appointment you add instantly updates your daily net profit and sets aside local sales taxes automatically.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Phone Frame Simulator -->
+                <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                    <div class="w-full max-w-[350px] bg-brandRed rounded-[48px] p-3 shadow-2xl shadow-brandRed/15 relative border-4 border-brandRed">
+                        <!-- Notch -->
+                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-6 bg-darkBg rounded-full z-20"></div>
+                        
+                        <!-- Screen -->
+                        <div class="bg-darkBg rounded-[36px] overflow-hidden h-[655px] flex flex-col relative border border-darkBorder">
+                            
+                            <!-- App Header -->
+                            <div class="bg-darkCard/95 backdrop-blur px-5 pt-12 pb-4 border-b border-darkBorder flex justify-between items-center z-10 sticky top-0">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-full bg-brandYellow flex items-center justify-center text-darkBg font-extrabold text-sm shadow">
+                                        RM
+                                    </div>
+                                    <div>
+                                        <h3 id="sim-app-title" class="font-bold text-sm text-white leading-tight">ReadyMadeApp</h3>
+                                        <p id="sim-app-subtitle" class="text-[10px] text-stone-400">Small Service Pro</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brandBlue/20 text-brandBlue text-[10px] font-bold">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i> Synced
+                                </div>
+                            </div>
+
+                            <!-- App Content -->
+                            <div id="sim-scroll-area" class="flex-1 overflow-y-auto no-scrollbar p-4 space-y-4">
+                                
+                                <!-- Live Snapshot -->
+                                <div class="bg-gradient-to-br from-darkCard to-stone-900 border border-darkBorder rounded-2xl p-4 space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[10px] uppercase font-bold text-stone-400">Live Backend Snapshot</span>
+                                        <span id="sim-appt-count-badge" class="text-[9px] bg-brandRed/20 text-brandRed px-2 py-0.5 rounded-full font-bold">2 Appointments</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2.5">
+                                        <div class="bg-darkBg rounded-xl p-3 border border-darkBorder">
+                                            <p id="sim-metric1-label" class="text-[10px] text-stone-400">Net Profit</p>
+                                            <p id="sim-profit" class="text-base font-extrabold text-brandYellow mt-0.5">$425.00</p>
+                                        </div>
+                                        <div class="bg-darkBg rounded-xl p-3 border border-darkBorder">
+                                            <p id="sim-metric2-label" class="text-[10px] text-stone-400">Taxes Held</p>
+                                            <p id="sim-taxes" class="text-base font-extrabold text-brandBlue mt-0.5">$63.75</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- In-Phone Quick Add Mini Drawer -->
+                                <div id="phone-quick-drawer" class="hidden bg-darkCard border border-brandRed/60 rounded-2xl p-3 space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[10px] font-bold uppercase text-brandRed">New Client Booking</span>
+                                        <button type="button" onclick="togglePhoneDrawer()" class="text-stone-400 hover:text-white text-xs">&times;</button>
+                                    </div>
+                                    <input type="text" id="phone-drawer-client" placeholder="Client name..." class="w-full bg-darkBg border border-darkBorder rounded-lg px-2.5 py-1.5 text-[11px] text-white focus:outline-none focus:border-brandRed">
+                                    <div class="grid grid-cols-2 gap-1.5">
+                                        <input type="text" id="phone-drawer-service" placeholder="Service..." class="bg-darkBg border border-darkBorder rounded-lg px-2.5 py-1.5 text-[11px] text-white focus:outline-none focus:border-brandRed">
+                                        <input type="number" id="phone-drawer-price" placeholder="$ Price" class="bg-darkBg border border-darkBorder rounded-lg px-2.5 py-1.5 text-[11px] text-white focus:outline-none focus:border-brandRed">
+                                    </div>
+                                    <button type="button" onclick="submitPhoneDrawerBooking()" class="w-full py-1.5 rounded-lg bg-brandRed text-white text-[11px] font-bold">
+                                        Save Appointment
+                                    </button>
+                                </div>
+
+                                <!-- Upcoming Client Appointments & Logs -->
+                                <div>
+                                    <div class="flex justify-between items-center mb-2.5 px-1">
+                                        <h4 id="sim-feed-title" class="text-xs font-bold text-stone-300 uppercase tracking-wide">Client Appointments</h4>
+                                        <button type="button" onclick="togglePhoneDrawer()" class="text-brandRed hover:underline text-[11px] font-bold">+ New Appt</button>
+                                    </div>
+                                    
+                                    <div id="sim-logs-list" class="space-y-2.5">
+                                        <!-- Populated dynamically by JS -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- App Bottom Nav -->
+                            <div class="bg-darkCard border-t border-darkBorder p-3.5 flex justify-around items-center sticky bottom-0">
+                                <div class="flex flex-col items-center gap-1 text-brandRed">
+                                    <i class="fa-solid fa-calendar-check text-sm"></i>
+                                    <span class="text-[9px] font-bold">Schedule</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1 text-stone-500">
+                                    <i class="fa-solid fa-users text-sm"></i>
+                                    <span class="text-[9px] font-medium">Clients</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1 text-stone-500">
+                                    <i class="fa-solid fa-chart-pie text-sm"></i>
+                                    <span class="text-[9px] font-medium">Finances</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         PRICING SECTION
+         ===================================================================== -->
+    <section id="pricing" class="py-20 bg-darkCard border-t border-darkBorder">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs font-bold text-brandYellow uppercase tracking-widest mb-3">
+                Tailored To Your Scope & Business Size
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Transparent Pricing. Short Turnaround Times.</h2>
+            <p class="text-stone-400 text-sm sm:text-base mb-12 max-w-2xl mx-auto font-sans">
+                Because there is no one-size-fits-all app, your build is priced according to your exact requirements, with hosting and ongoing maintenance bundled cleanly at billing.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <!-- Tier 1: Simple Personal Apps/Software -->
+                <div class="bg-darkBg border border-darkBorder rounded-3xl p-7 shadow-xl flex flex-col">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brandRed mb-2">For Solo Pros & Small Teams</span>
+                    <h3 class="text-xl font-extrabold text-white">Simple Personal Apps</h3>
+                    <div class="mt-4 mb-5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-stone-400 block">Starting at</span>
+                        <span class="text-4xl font-extrabold text-brandRed">$199</span>
+                        <span class="text-stone-300 text-xs font-bold"> one-time lifetime price</span>
+                    </div>
+                    <p class="text-sm text-stone-300 font-sans mb-6">A private, streamlined web or mobile backend custom-built around your personal workflow, services, and pricing. Pay once and the app is yours to own on your device.</p>
+                    <ul class="space-y-3 text-xs sm:text-sm text-stone-300 font-sans flex-1 mb-8">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandRed mt-1"></i> <span>Yours to own for life directly on your device</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandRed mt-1"></i> <span>100% tailored to your specific needs</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandRed mt-1"></i> <span>Custom booking logs, tax math & SMS receipts</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandRed mt-1"></i> <span>Short turnaround times</span></li>
+                    </ul>
+                    <a href="#contact" class="w-full py-3.5 rounded-full bg-brandRed hover:bg-[#e04825] text-white font-bold text-sm transition text-center shadow-lg shadow-brandRed/20">
+                        Start Simple App Brief
+                    </a>
+                </div>
+
+                <!-- Tier 2: Complex Software for Larger Businesses -->
+                <div class="bg-gradient-to-b from-darkBg to-[#171926] border-2 border-brandBlue rounded-3xl p-7 shadow-2xl shadow-brandBlue/10 flex flex-col">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brandBlue mb-2">Growing & Larger Teams</span>
+                    <h3 class="text-xl font-extrabold text-white">Complex Business Software</h3>
+                    <div class="mt-4 mb-5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-stone-400 block">Tailored Scope</span>
+                        <span class="text-3xl sm:text-4xl font-extrabold text-white">Custom Quote</span>
+                    </div>
+                    <p class="text-sm text-stone-300 font-sans mb-6">Comprehensive operational software engineered from scratch for larger businesses, multi-crew fleets, and complex workflows.</p>
+                    <ul class="space-y-3 text-xs sm:text-sm text-stone-300 font-sans flex-1 mb-8">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandBlue mt-1"></i> <span>Custom dashboards, CRMs & inventory systems</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandBlue mt-1"></i> <span>Role-based staff logins & client portals</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandBlue mt-1"></i> <span>Built around your exact company rules</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandBlue mt-1"></i> <span>Short turnaround times</span></li>
+                    </ul>
+                    <a href="#contact" class="w-full py-3.5 rounded-full bg-brandBlue hover:bg-[#0040cc] text-white font-bold text-sm transition shadow-lg shadow-brandBlue/25 text-center">
+                        Request Custom Quote
+                    </a>
+                </div>
+
+                <!-- Tier 3: Included Hosting & Maintenance (No clickable link/button) -->
+                <div class="bg-darkBg border border-darkBorder rounded-3xl p-7 shadow-xl flex flex-col">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brandYellow mb-2">Bundled At Billing</span>
+                    <h3 class="text-xl font-extrabold text-white">Hosting & Maintenance</h3>
+                    <div class="mt-4 mb-5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-stone-400 block">Starting at</span>
+                        <span class="text-4xl font-extrabold text-white">$59</span>
+                        <span class="text-stone-400 text-xs font-medium"> / month</span>
+                    </div>
+                    <p class="text-sm text-stone-300 font-sans mb-6">Automatically added to most app creations at the time of billing rather than sold as a separate add-on, keeping your software fast, backed up, and up to date.</p>
+                    <ul class="space-y-3 text-xs sm:text-sm text-stone-300 font-sans flex-1">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandYellow mt-1"></i> <span>Secure cloud hosting & automated backups</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandYellow mt-1"></i> <span>Ongoing adjustments as your business evolves</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandYellow mt-1"></i> <span>Dedicated technical support & monitoring</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-brandYellow mt-1"></i> <span>Included seamlessly during project billing</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         COMPREHENSIVE CUSTOM SOFTWARE CONTACT & BRIEF SECTION (On-Page)
+         ===================================================================== -->
+    <section id="contact" class="py-24 bg-darkBg border-t border-darkBorder relative overflow-hidden">
+        <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-brandRed/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
+                <p class="text-xs font-bold text-brandRed uppercase tracking-widest">
+                    Custom Software Discovery & Contact Form
+                </p>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Tell us what your business needs built
+                </h2>
+                <p class="text-stone-400 text-sm sm:text-base font-sans">
+                    We don't believe in one app for everyone. Answer the questions below so we can tailor a completely unique app around your specific business needs with short turnaround times.
+                </p>
+            </div>
+
+            <div class="bg-darkCard border border-darkBorder rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+                <form id="mainContactForm" onsubmit="handleMainFormSubmit(event)" class="space-y-6 font-sans">
+                    
+                    <!-- Step 1: Contact & Company Info -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-2.5 border-b border-darkBorder pb-2.5">
+                            <span class="w-6 h-6 rounded-full bg-brandRed text-white text-xs font-extrabold flex items-center justify-center">1</span>
+                            <h3 class="text-base font-bold text-white">Contact & Business Identity</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Your Full Name *</label>
+                                <input type="text" required placeholder="Alex Rivera" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandRed transition placeholder-stone-600">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Work Email Address *</label>
+                                <input type="email" required placeholder="alex@yourcompany.com" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandRed transition placeholder-stone-600">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Phone / SMS Number *</label>
+                                <input type="tel" required placeholder="(555) 234-5678" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandRed transition placeholder-stone-600">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Business / Brand Name *</label>
+                                <input type="text" required placeholder="e.g. Apex Logistics LLC" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandRed transition placeholder-stone-600">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Team Size *</label>
+                                <select required class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandRed transition">
+                                    <option value="" disabled selected>Select size...</option>
+                                    <option value="solo">Solo Founder / Operator (1)</option>
+                                    <option value="small">Small Team (2–5 users)</option>
+                                    <option value="growing">Growing Business (6–20 users)</option>
+                                    <option value="larger">20+ Users / Multi-Location</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Industry & Current Pain Points -->
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center gap-2.5 border-b border-darkBorder pb-2.5">
+                            <span class="w-6 h-6 rounded-full bg-brandYellow text-darkBg text-xs font-extrabold flex items-center justify-center">2</span>
+                            <h3 class="text-base font-bold text-white">Industry & Current Workflow</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Business Industry / Sector *</label>
+                                <select required class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandYellow transition">
+                                    <option value="" disabled selected>Select your industry...</option>
+                                    <option value="construction">Construction, Trades & Home Services</option>
+                                    <option value="retail">Retail, E-Commerce & Wholesale</option>
+                                    <option value="salon_service">Beauty, Wellness, Salon & Mobile Services</option>
+                                    <option value="health_coaching">Clinic, Therapy, Fitness & Coaching</option>
+                                    <option value="logistics">Logistics, Delivery & Fleet Operations</option>
+                                    <option value="agency">Agency, Consulting & Professional Services</option>
+                                    <option value="hospitality">Food, Catering & Event Operations</option>
+                                    <option value="other">Other Custom Business Model</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">What are you using right now? *</label>
+                                <select required class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandYellow transition">
+                                    <option value="" disabled selected>Select current setup...</option>
+                                    <option value="spreadsheets">Excel / Google Sheets & Manual Notes</option>
+                                    <option value="phone_text">Phone Calls, SMS & Social DMs</option>
+                                    <option value="bloated_saas">Expensive / Over-complicated SaaS Tools</option>
+                                    <option value="multiple_apps">3+ Disconnected Apps That Don't Sync</option>
+                                    <option value="starting_fresh">Brand New Business / Launching Fresh</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Biggest Bottleneck or Problem You Want Solved *</label>
+                            <textarea required rows="2" placeholder="e.g. 'We waste 2 hours every night calculating job quotes, mileage, and taxes across 4 different spreadsheets and text threads.'" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandYellow transition resize-none placeholder-stone-600"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Exact App Specifications -->
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center gap-2.5 border-b border-darkBorder pb-2.5">
+                            <span class="w-6 h-6 rounded-full bg-brandBlue text-white text-xs font-extrabold flex items-center justify-center">3</span>
+                            <h3 class="text-base font-bold text-white">Your Custom Software Specifications</h3>
+                        </div>
+
+                        <!-- Interactive Feature Checkboxes -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-2">Which core capabilities do you need included? (Select all that apply)</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs">
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">Custom Quoting / Pricing Math</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">Booking / Job Scheduling Log</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">1-Tap SMS / Email Receipts</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">Local Tax & Net Profit Tracker</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">Inventory / Stock Management</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">Client Profiles & History CRM</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">Travel Zones / Mileage Fees</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">Staff / Driver Role Logins</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 bg-darkBg border border-darkBorder hover:border-stone-600 rounded-xl p-3 cursor-pointer">
+                                    <input type="checkbox" class="accent-brandRed rounded">
+                                    <span class="text-stone-200">Client-Facing Approval Portal</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Your Products, Services, Pricing & Tax Rules *</label>
+                            <textarea required rows="3" placeholder="List what you sell or bill for, your pricing structure, travel zones, markup formulas, or local tax rates (e.g. 'Zone 1: $15, Zone 2: $30, 8.25% sales tax, or tiered wholesale pricing')..." class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandBlue transition resize-none placeholder-stone-600"></textarea>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Preferred Appointment Alert Timing</label>
+                                <select class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandBlue transition">
+                                    <option value="custom" selected>Custom lead time + Phone Calendar Sync</option>
+                                    <option value="15m_1h">15 mins & 1 hour before + Phone Calendar Sync</option>
+                                    <option value="2h_day">2 hours & 1 day before + Phone Calendar Sync</option>
+                                    <option value="none">No appointment notifications needed</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Project Scope & Turnaround *</label>
+                                <select required class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandBlue transition">
+                                    <option value="simple" selected>Simple Personal App / Backend (Starting at $199 Lifetime)</option>
+                                    <option value="complex">Complex Software for Larger Business (Custom Quote)</option>
+                                    <option value="consultation">Not sure yet / Request Scope & Quote</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">Any Extra Automations, Integrations, or Custom Notes?</label>
+                            <textarea rows="2" placeholder="Mention phone calendar sync preferences, custom notification timings, CSV exports, or any specific workflow..." class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandBlue transition resize-none placeholder-stone-600"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Summary & Submit -->
+                    <div class="p-4 sm:p-5 bg-brandBlue/10 border border-brandBlue/30 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-bold text-brandBlue flex items-center gap-2">
+                                <i class="fa-solid fa-shield-check"></i> 100% Tailored Build • Short Turnaround Times
+                            </p>
+                            <p class="text-xs sm:text-[11px] text-stone-300 leading-relaxed">
+                                Starting at <strong class="text-white">$199 one-time lifetime price</strong> (the app is yours to own on your device; custom quotes for complex systems) • Maintenance starting at <strong class="text-white">$59/mo</strong> is added at billing for most builds.
+                            </p>
+                        </div>
+                        <button type="submit" class="w-full sm:w-auto px-8 py-4 bg-brandRed hover:bg-[#e04825] text-white font-extrabold text-sm uppercase tracking-wider rounded-full transition shadow-lg shadow-brandRed/25 whitespace-nowrap">
+                            Submit Project Brief →
+                        </button>
+                    </div>
+                </form>
+
+                <!-- On-Page Success State -->
+                <div id="mainFormSuccess" class="hidden absolute inset-0 bg-darkCard/95 backdrop-blur-md rounded-3xl flex-col items-center justify-center p-8 text-center z-10 border border-brandYellow/40">
+                    <div class="w-16 h-16 rounded-full bg-brandYellow/15 flex items-center justify-center text-brandYellow text-3xl mb-4">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h4 class="text-2xl font-extrabold text-white mb-2">Your Custom App Brief Is In!</h4>
+                    <p class="text-sm text-stone-300 font-sans max-w-md mb-6">
+                        We've received your specific business requirements. Our team is reviewing your workflow now and will follow up promptly with your tailored plan and turnaround timeline.
+                    </p>
+                    <button onclick="resetMainForm()" class="px-6 py-2.5 rounded-full bg-darkBg border border-darkBorder hover:border-white text-xs font-bold text-white transition">
+                        Submit Another Brief
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- =====================================================================
+         FOOTER
+         ===================================================================== -->
+    <footer class="bg-darkBg border-t border-darkBorder py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
+                <div class="flex items-center gap-2.5 font-bold text-stone-200 text-center sm:text-left">
+                    <div class="w-6 h-6 rounded-lg bg-brandRed flex items-center justify-center text-white text-[11px] font-extrabold shrink-0">RM</div>
+                    <span>ReadyMadeApp.com | Custom Business Software & App Development</span>
+                </div>
+                <nav aria-label="Footer Navigation" class="flex flex-wrap justify-center gap-4 sm:gap-5">
+                    <a href="#why-custom" class="hover:text-white transition">Custom Backends</a>
+                    <a href="#examples" class="hover:text-white transition">Industry Solutions</a>
+                    <a href="#preview" class="hover:text-white transition">Live Simulator</a>
+                    <a href="#pricing" class="hover:text-white transition">Pricing</a>
+                    <a href="#contact" class="hover:text-brandRed transition">Start Project Brief</a>
+                </nav>
+            </div>
+            <div class="border-t border-darkBorder/60 pt-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-stone-500 text-center sm:text-left">
+                <p>&copy; 2026 ReadyMadeApp. Private apps for small businesses and custom software built around how companies actually operate.</p>
+                <p>Custom Web Applications • Internal Business Tools • Workflow Automation</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         AI ASSISTANT CHATBOT WIDGET (Mobile-First Responsive Overlay)
+         ===================================================================== -->
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+        <!-- Floating Chat Button -->
+        <button onclick="toggleChat()" id="chatToggleBtn" class="w-14 h-14 rounded-full bg-brandRed hover:bg-[#e04825] text-white shadow-2xl shadow-brandRed/30 flex items-center justify-center text-xl transition transform hover:scale-105" aria-label="Toggle AI Assistant">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chatWindow" class="hidden fixed inset-x-3 bottom-20 sm:inset-x-auto sm:absolute sm:bottom-20 sm:right-0 sm:w-[380px] bg-darkCard border border-darkBorder rounded-3xl shadow-2xl flex-col overflow-hidden h-[70vh] max-h-[500px]">
+            <!-- Chat Header -->
+            <div class="bg-darkBg p-4 border-b border-darkBorder flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-brandRed/20 text-brandRed flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">ReadyMadeApp AI Architect</h4>
+                        <p class="text-[10px] text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Online • Scope your custom app
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-stone-400 hover:text-white p-1" aria-label="Close chat">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Initial Greeting -->
+            <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-xs font-sans">
+                <div class="flex items-start gap-2">
+                    <div class="w-7 h-7 rounded-full bg-brandRed/20 text-brandRed flex items-center justify-center shrink-0 font-bold text-[10px]">AI</div>
+                    <div class="bg-darkBg border border-darkBorder p-3 rounded-2xl rounded-tl-none text-stone-200 max-w-[82%] leading-relaxed">
+                        Hi! We don't believe in one app for everyone. Whether you need a simple personal backend app starting at a $199 one-time lifetime price (yours to own directly on your device) or complex operational software for a larger business, tell me how you operate and I'll map out a completely unique solution for you!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="p-3 bg-darkBg border-t border-darkBorder flex gap-2">
+                <input type="text" id="chatInput" onkeydown="if(event.key==='Enter') sendChatMessage()" placeholder="Describe your business or ask a question..." class="flex-1 bg-darkCard border border-darkBorder rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brandRed placeholder-stone-500">
+                <button onclick="sendChatMessage()" class="px-4 bg-brandRed hover:bg-[#e04825] text-white rounded-xl text-xs font-bold transition" aria-label="Send message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT LOGIC (Multi-Industry Simulator, Form & Gemini Chatbot)
+         ===================================================================== -->
+    <script>
+        // Toast helper (Never uses alert())
+        let toastTimer;
+        function showToast(message) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3200);
+        }
+
+        // Main Contact Form Handlers
+        function handleMainFormSubmit(e) {
+            e.preventDefault();
+            const successOverlay = document.getElementById('mainFormSuccess');
+            successOverlay.classList.remove('hidden');
+            successOverlay.classList.add('flex');
+            showToast('Custom software brief submitted! We will follow up shortly.');
+        }
+
+        function resetMainForm() {
+            const form = document.getElementById('mainContactForm');
+            form.reset();
+            const successOverlay = document.getElementById('mainFormSuccess');
+            successOverlay.classList.add('hidden');
+            successOverlay.classList.remove('flex');
+        }
+
+        // Multi-Industry Interactive App Simulator with Real-Time Client Appointments
+        const simPresets = {
+            service: {
+                subtitle: 'Small Service Pro Backend',
+                metric1Label: 'Net Profit',
+                metric2Label: 'Taxes Held',
+                profit: 425.00,
+                taxes: 63.75,
+                countLabel: 'Appointments',
+                initialCount: 2,
+                feedTitle: 'Client Appointments',
+                sampleQueue: [
+                    { client: 'Chloe T.', service: 'Balayage & Gloss', time: 'Today 6:00 PM', source: 'Text Booking', detail: 'Incl. Zone 2 Travel & Tax', price: 145.00 },
+                    { client: 'Marcus V.', service: 'Mobile Fade & Beard', time: 'Tomorrow 9:30 AM', source: 'Phone Call', detail: 'Incl. Zone 1 Travel & Tax', price: 75.00 },
+                    { client: 'Nadia B.', service: 'Bridal Trial Styling', time: 'Fri 1:00 PM', source: 'IG DM Booking', detail: 'Deposit Paid • Tax Held', price: 180.00 }
+                ],
+                smsSample: 'ReadyMadeApp Confirmation: Your appointment with Chloe T. for Balayage & Gloss ($145.00 tax incl.) is booked for Today at 6:00 PM. Reply C to confirm!',
+                logsHtml: `
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-3">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-xs font-bold text-white">Haircut & Styling - Elena M.</p>
+                                <p class="text-[10px] text-stone-400">Phone Booking • Today 2:00 PM</p>
+                            </div>
+                            <span class="text-[10px] bg-brandBlue/15 text-brandBlue px-2 py-0.5 rounded-full font-bold">Confirmed</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[10px] bg-darkBg p-2 rounded-xl border border-darkBorder">
+                            <span class="text-stone-400">Incl. Zone 1 Travel & Tax</span>
+                            <span class="font-bold text-white">$125.00</span>
+                        </div>
+                    </div>
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-3">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-xs font-bold text-white">Full Color - Jessica R.</p>
+                                <p class="text-[10px] text-stone-400">IG DM Booking • Today 4:30 PM</p>
+                            </div>
+                            <span class="text-[10px] bg-brandYellow/15 text-brandYellow px-2 py-0.5 rounded-full font-bold">Upcoming</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[10px] bg-darkBg p-2 rounded-xl border border-darkBorder">
+                            <span class="text-stone-400">Incl. Travel & Tax</span>
+                            <span class="font-bold text-white">$210.00</span>
+                        </div>
+                    </div>
+                `
+            },
+            contractor: {
+                subtitle: 'Contractor & Crew Schedule',
+                metric1Label: 'Booked Jobs',
+                metric2Label: 'Est. Margin',
+                profit: 3850.00,
+                taxes: 1347.50,
+                countLabel: 'Site Visits',
+                initialCount: 2,
+                feedTitle: 'Scheduled Client Visits',
+                sampleQueue: [
+                    { client: 'David P. (420 Oak St)', service: 'Deck Staining Walkthrough', time: 'Tomorrow 8:00 AM', source: 'Phone Quote', detail: '380 sq ft + Materials', price: 1250.00 },
+                    { client: 'Lina G. (88 Pine Ave)', service: 'EV Charger Install', time: 'Thu 11:00 AM', source: 'Text Request', detail: 'Crew B Assigned • Permit Ready', price: 980.00 },
+                    { client: 'Harbor Bistro', service: 'Walk-In Cooler Check', time: 'Fri 7:30 AM', source: 'Direct Dispatch', detail: 'Priority Service Call', price: 420.00 }
+                ],
+                smsSample: 'Apex Builders Appointment: Your site visit for Deck Staining Walkthrough ($1,250.00 est.) is scheduled for Tomorrow at 8:00 AM.',
+                logsHtml: `
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-3">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-xs font-bold text-white">Panel Upgrade - Marcus D.</p>
+                                <p class="text-[10px] text-stone-400">Crew A • Today 9:00 AM</p>
+                            </div>
+                            <span class="text-[10px] bg-brandBlue/15 text-brandBlue px-2 py-0.5 rounded-full font-bold">On Site</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[10px] bg-darkBg p-2 rounded-xl border border-darkBorder">
+                            <span class="text-stone-400">Labor + Parts + Tax</span>
+                            <span class="font-bold text-white">$2,400.00</span>
+                        </div>
+                    </div>
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-3">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-xs font-bold text-white">Kitchen Tile Measure - Sara L.</p>
+                                <p class="text-[10px] text-stone-400">Estimate Visit • Today 3:15 PM</p>
+                            </div>
+                            <span class="text-[10px] bg-brandYellow/15 text-brandYellow px-2 py-0.5 rounded-full font-bold">Upcoming</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[10px] bg-darkBg p-2 rounded-xl border border-darkBorder">
+                            <span class="text-stone-400">65 sq ft + Grout Kit</span>
+                            <span class="font-bold text-white">$1,450.00</span>
+                        </div>
+                    </div>
+                `
+            },
+            retail: {
+                subtitle: 'Enterprise & Retail Ops',
+                metric1Label: 'Daily Revenue',
+                metric2Label: 'Taxes Held',
+                profit: 5070.00,
+                taxes: 760.50,
+                countLabel: 'Client Deliveries',
+                initialCount: 2,
+                feedTitle: 'Client Appointments & Deliveries',
+                sampleQueue: [
+                    { client: 'Cafe Luna Wholesale', service: '20-Bag Roastery Dropoff', time: 'Today 3:30 PM', source: 'B2B Portal', detail: 'Stock auto-deducted (-20 units)', price: 640.00 },
+                    { client: 'Studio Nord Showroom', service: 'Private Buyer Fitting', time: 'Tomorrow 11:00 AM', source: 'VIP Booking', detail: 'Rep Assigned • Catalog Ready', price: 1120.00 },
+                    { client: 'Greenleaf Grocer', service: 'Weekly Restock Audit', time: 'Fri 9:00 AM', source: 'Account Rep', detail: 'Net 15 Terms • Tier A', price: 1540.00 }
+                ],
+                smsSample: 'Order & Delivery Confirmed: Cafe Luna Wholesale (20-Bag Roastery Dropoff, $640.00) is scheduled for Today at 3:30 PM.',
+                logsHtml: `
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-3">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-xs font-bold text-white">Corner Market Restock</p>
+                                <p class="text-[10px] text-stone-400">Delivery Appt • Today 1:00 PM</p>
+                            </div>
+                            <span class="text-[10px] bg-brandBlue/15 text-brandBlue px-2 py-0.5 rounded-full font-bold">Delivered</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[10px] bg-darkBg p-2 rounded-xl border border-darkBorder">
+                            <span class="text-stone-400">15 Cases • Tier A Pricing</span>
+                            <span class="font-bold text-white">$1,890.00</span>
+                        </div>
+                    </div>
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-3">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-xs font-bold text-white">VIP Showroom Consultation - Kim H.</p>
+                                <p class="text-[10px] text-stone-400">In-Store Appt • Today 4:00 PM</p>
+                            </div>
+                            <span class="text-[10px] bg-brandYellow/15 text-brandYellow px-2 py-0.5 rounded-full font-bold">Scheduled</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[10px] bg-darkBg p-2 rounded-xl border border-darkBorder">
+                            <span class="text-stone-400">Custom Order & Tax Calc</span>
+                            <span class="font-bold text-white">$3,180.00</span>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        let currentPresetKey = 'service';
+        let simProfit = simPresets.service.profit;
+        let simTaxes = simPresets.service.taxes;
+        let simApptCount = simPresets.service.initialCount;
+        let sampleIdx = 0;
+        let lastBookedSms = simPresets.service.smsSample;
+
+        function updateSimMetricsUI() {
+            const preset = simPresets[currentPresetKey];
+            document.getElementById('sim-profit').textContent = '$' + simProfit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('sim-taxes').textContent = '$' + simTaxes.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('sim-appt-count-badge').textContent = simApptCount + ' ' + preset.countLabel;
+        }
+
+        function switchSimPreset(key) {
+            currentPresetKey = key;
+            sampleIdx = 0;
+            const preset = simPresets[key];
+            simProfit = preset.profit;
+            simTaxes = preset.taxes;
+            simApptCount = preset.initialCount;
+            lastBookedSms = preset.smsSample;
+
+            ['service', 'contractor', 'retail'].forEach(k => {
+                const btn = document.getElementById('preset-btn-' + k);
+                if (k === key) {
+                    btn.className = 'px-4 py-2 rounded-full bg-brandRed text-white text-xs font-bold transition shadow-md';
+                } else {
+                    btn.className = 'px-4 py-2 rounded-full bg-darkCard border border-darkBorder text-stone-300 hover:text-white text-xs font-bold transition';
+                }
+            });
+
+            document.getElementById('sim-app-subtitle').textContent = preset.subtitle;
+            document.getElementById('sim-metric1-label').textContent = preset.metric1Label;
+            document.getElementById('sim-metric2-label').textContent = preset.metric2Label;
+            document.getElementById('sim-feed-title').textContent = preset.feedTitle;
+            document.getElementById('sim-logs-list').innerHTML = preset.logsHtml;
+            updateSimMetricsUI();
+        }
+
+        function appendAppointmentCard(client, service, time, source, detail, price) {
+            const numericPrice = parseFloat(price) || 100;
+            const taxAmount = +(numericPrice * 0.13).toFixed(2);
+            const netAmount = +(numericPrice - taxAmount).toFixed(2);
+
+            simProfit += netAmount;
+            simTaxes += taxAmount;
+            simApptCount += 1;
+            updateSimMetricsUI();
+
+            lastBookedSms = `ReadyMadeApp Booking: ${client} scheduled for ${service} on ${time}. Total: $${numericPrice.toFixed(2)} (incl. $${taxAmount.toFixed(2)} tax). Reply YES to confirm!`;
+
+            const logsList = document.getElementById('sim-logs-list');
+            const newCard = `
+                <div class="bg-darkCard border border-brandRed/70 rounded-2xl p-3 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="text-xs font-bold text-white">${escapeHtml(service)} - ${escapeHtml(client)}</p>
+                            <p class="text-[10px] text-brandYellow font-semibold">${escapeHtml(source)} • ${escapeHtml(time)}</p>
+                        </div>
+                        <span class="text-[10px] bg-brandRed/20 text-brandRed px-2 py-0.5 rounded-full font-bold">New Appt</span>
+                    </div>
+                    <div class="flex justify-between items-center text-[10px] bg-darkBg p-2 rounded-xl border border-darkBorder">
+                        <span class="text-stone-400">${escapeHtml(detail)}</span>
+                        <span class="font-bold text-brandYellow">$${numericPrice.toFixed(2)}</span>
+                    </div>
+                </div>
+            `;
+            logsList.insertAdjacentHTML('afterbegin', newCard);
+            const scrollArea = document.getElementById('sim-scroll-area');
+            if (scrollArea) scrollArea.scrollTop = 0;
+
+            showToast(`Added ${client} (${time}) & held $${taxAmount.toFixed(2)} tax!`);
+        }
+
+        function simSubmitCustomAppointment(e) {
+            e.preventDefault();
+            const client = document.getElementById('sim-input-client').value.trim();
+            const service = document.getElementById('sim-input-service').value.trim();
+            const time = document.getElementById('sim-input-time').value.trim();
+            const price = document.getElementById('sim-input-price').value;
+
+            if (!client || !service || !time || !price) return;
+
+            appendAppointmentCard(client, service, time, 'New Booking', 'Auto-Tax & Calendar Synced', price);
+            e.target.reset();
+        }
+
+        function simAddRandomAppointment() {
+            const preset = simPresets[currentPresetKey];
+            const item = preset.sampleQueue[sampleIdx % preset.sampleQueue.length];
+            sampleIdx += 1;
+            appendAppointmentCard(item.client, item.service, item.time, item.source, item.detail, item.price);
+        }
+
+        function togglePhoneDrawer() {
+            const drawer = document.getElementById('phone-quick-drawer');
+            drawer.classList.toggle('hidden');
+            if (!drawer.classList.contains('hidden')) {
+                document.getElementById('phone-drawer-client').focus();
+            }
+        }
+
+        function submitPhoneDrawerBooking() {
+            const client = document.getElementById('phone-drawer-client').value.trim() || 'Walk-In Client';
+            const service = document.getElementById('phone-drawer-service').value.trim() || 'Custom Service';
+            const price = document.getElementById('phone-drawer-price').value || '95';
+
+            appendAppointmentCard(client, service, 'Today 5:15 PM', 'In-App Log', 'Tax & Receipt Ready', price);
+            document.getElementById('phone-drawer-client').value = '';
+            document.getElementById('phone-drawer-service').value = '';
+            document.getElementById('phone-drawer-price').value = '';
+            togglePhoneDrawer();
+        }
+
+        function simCopySmsReceipt() {
+            const tempInput = document.createElement('input');
+            tempInput.value = lastBookedSms;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast('1-Tap Client SMS copied to clipboard!');
+            } catch (err) {
+                showToast('Client SMS ready to paste!');
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        function simResetPreview() {
+            switchSimPreset(currentPresetKey);
+            showToast('App simulator reset!');
+        }
+
+        // Initialize simulator on load
+        switchSimPreset('service');
+
+        // Chatbot Logic with Exponential Backoff
+        function toggleChat() {
+            const chatWin = document.getElementById('chatWindow');
+            if (chatWin.classList.contains('hidden')) {
+                chatWin.classList.remove('hidden');
+                chatWin.classList.add('flex');
+                document.getElementById('chatInput').focus();
+            } else {
+                chatWin.classList.remove('flex');
+                chatWin.classList.add('hidden');
+            }
+        }
+
+        async function fetchGeminiWithBackoff(url, payload, maxRetries = 3) {
+            for (let attempt = 0; attempt <= maxRetries; attempt++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                    return await response.json();
+                } catch (err) {
+                    if (attempt === maxRetries) throw err;
+                    await new Promise(res => setTimeout(res, Math.pow(2, attempt) * 1000));
+                }
+            }
+        }
+
+        async function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            const messagesContainer = document.getElementById('chatMessages');
+
+            // Append User Message
+            messagesContainer.insertAdjacentHTML('beforeend', `
+                <div class="flex items-start gap-2 justify-end">
+                    <div class="bg-brandRed text-white p-3 rounded-2xl rounded-tr-none max-w-[82%] leading-relaxed">${escapeHtml(msg)}</div>
+                </div>
+            `);
+            input.value = '';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Show Typing Indicator
+            const typingId = 'typing_' + Date.now();
+            messagesContainer.insertAdjacentHTML('beforeend', `
+                <div id="${typingId}" class="flex items-start gap-2">
+                    <div class="w-7 h-7 rounded-full bg-brandRed/20 text-brandRed flex items-center justify-center shrink-0 font-bold text-[10px]">AI</div>
+                    <div class="bg-darkBg border border-darkBorder p-3 rounded-2xl rounded-tl-none text-stone-400">Designing ideas...</div>
+                </div>
+            `);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            try {
+                const systemPrompt = "You are the AI Solutions Architect for ReadyMadeApp (readymadeapp.com), a Customized Software-as-a-Service company. Emphasize that we never push a generic 'one app for everyone' template; every single app or software system is 100% unique and tailored to the client's exact business needs. We build simple personal backend apps for small businesses and solo operators ('the little guys') starting at a $199 one-time lifetime price where the app is theirs to own on their device, and we provide custom quotes for more complex software/apps for larger businesses. Monthly cloud hosting and maintenance starts at $59/month and is added on to most app creations at the time of billing rather than sold as a separate add-on. We offer short turnaround times on most software and apps (never promise 72 hours). Never use em-dashes in your responses. Keep replies concise, practical, and encouraging.";
+                
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+                
+                const payload = {
+                    contents: [{ parts: [{ text: msg }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] }
+                };
+
+                const result = await fetchGeminiWithBackoff(apiUrl, payload);
+                const candidate = result.candidates?.[0];
+                let reply = "We tailor every app exclusively to your business needs, starting at $199 for simple personal apps and custom quotes for complex software, with short turnaround times! Fill out the Project Brief form below to get started.";
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    reply = candidate.content.parts[0].text;
+                }
+
+                const typingEl = document.getElementById(typingId);
+                if (typingEl) typingEl.remove();
+
+                messagesContainer.insertAdjacentHTML('beforeend', `
+                    <div class="flex items-start gap-2">
+                        <div class="w-7 h-7 rounded-full bg-brandRed/20 text-brandRed flex items-center justify-center shrink-0 font-bold text-[10px]">AI</div>
+                        <div class="bg-darkBg border border-darkBorder p-3 rounded-2xl rounded-tl-none text-stone-200 max-w-[82%] leading-relaxed">${escapeHtml(reply)}</div>
+                    </div>
+                `);
+            } catch (err) {
+                const typingEl = document.getElementById(typingId);
+                if (typingEl) typingEl.remove();
+                messagesContainer.insertAdjacentHTML('beforeend', `
+                    <div class="flex items-start gap-2">
+                        <div class="w-7 h-7 rounded-full bg-brandRed/20 text-brandRed flex items-center justify-center shrink-0 font-bold text-[10px]">AI</div>
+                        <div class="bg-darkBg border border-darkBorder p-3 rounded-2xl rounded-tl-none text-stone-200 max-w-[82%] leading-relaxed">We build completely unique apps tailored to your exact business needs, starting at $199 for simple personal apps and custom quotes for larger systems! Fill out the Project Brief form below so we can scope yours.</div>
+                    </div>
+                `);
+            }
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+    </script>
+</body>
+</html>
